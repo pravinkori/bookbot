@@ -1,7 +1,7 @@
 import sys
 from stats import get_num_words, get_char_count, sort_char_count
 
-def get_book_test(file_path):
+def get_book_text(file_path):
     with open(file_path) as file:
         file_contents = file.read()
     
@@ -13,7 +13,7 @@ def main():
         sys.exit(1)
     
     book_path = sys.argv[1]
-    book_text = get_book_test(book_path)
+    book_text = get_book_text(book_path)
 
     num_words = get_num_words(book_text)
     char_counts = get_char_count(book_text)
