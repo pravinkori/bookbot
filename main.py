@@ -1,5 +1,17 @@
-import sys
+import sys, os
 from stats import get_num_words, get_char_count, sort_char_count
+
+def list_books_in_directory(directory):
+    try:
+        files = os.listdir(directory)
+        txt_files = []
+
+        for file in files:
+            if file.endswith('.txt'):
+                txt_files.append(file)
+        return txt_files
+    except FileNotFoundError:
+        return[]
 
 def get_book_text(file_path):
     try:
@@ -15,6 +27,11 @@ def get_book_text(file_path):
 def main():
     if len(sys.argv) < 2:
         print("Usage: python3 main.py <path_to_book>")
+        
+        print("\nAvailable books in 'books/' directory:")
+        for book in list_books_in_directory('books'):
+            print(f"  - books/{book}")
+        
         sys.exit(1)
     
     book_path = sys.argv[1]
