@@ -1,4 +1,5 @@
 # 📚 BookBot
+[![bookbot test](https://github.com/pravinkori/bookbot/actions/workflows/python-app.yml/badge.svg?branch=addtests)](https://github.com/pravinkori/bookbot/actions/workflows/python-app.yml)
 
 BookBot is a Python-based text analysis tool that reads `.txt` book files and generates insightful word and character frequency reports from the text.
 
